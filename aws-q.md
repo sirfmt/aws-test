@@ -433,26 +433,26 @@ aws ec2 associate-address --instance-id i-8b953 --allocation-id eipalloc-02d021a
 
 - [ ] manual scaling
 - [ ] maintain current levels at all times
-- [ ] scale based on a schedule
-- [ ] scale based on demand
+- [X] scale based on a schedule
+- [X] scale based on demand
 
 #### Q54. When creating a new RDS instance, what does the Multi-AZ option do?
 
 - [ ] replicates backups of your database to S3 and makes them available across regions to prevent against any data loss
 - [ ] creates a second passive database instance within the same region that will become the primary database during a failover
 - [ ] creates a highly available database cluster that will host your database cluster in at least two regions
-- [ ] creates another database instance in another region and keeps a hot standby active to failover to during regional failures
+- [X] creates another database instance in another region and keeps a hot standby active to failover to during regional failures
 
 #### Q55. What is the best EC2 instance class for a server that continuously has a heavy CPU load?
 
-- [ ] C5
+- [X] C5
 - [ ] H1
 - [ ] R5
 - [ ] T2
 
 #### Q56. Your application performance management (APM) system can read the status of your CloudWatch monitors and perform scripted actions. When the CloudWatch metric StatusCheckFailed enters a failed state (a value of 1), you would like your APM to automatically repair the instance. Which script do you use?
 
-- [ ] A
+- [X] A
 
 ```
 aws ec2 stop-instances --instance-ids i-0aa41e8086446e8f9
@@ -482,7 +482,7 @@ aws ec2 start-instances --instance-ids i-0aa41e8086446e8f9
 
 #### Q57. To comply with auditing requirements of some compliance standards, which AWS tool can be enabled to maintain an audit log of access and changes to your AWS infrastructure?
 
-- [ ] AWS Audit and Compliance Tool
+- [X] AWS Audit and Compliance Tool
 - [ ] CloudTrail
 - [ ] CloudWatch
 - [ ] GuardDuty
@@ -495,7 +495,7 @@ aws ec2 start-instances --instance-ids i-0aa41e8086446e8f9
 - [ ] Create a public S3 bucket. Use a hash of the user's email address and the date and time the report was requested to generate a
   unique object name. Email this link to the user and have a scheduled task run within your application to remove objects that are older
   than seven days.
-- [ ] Create a private S3 bucket. The link in the email should take the user to your application, where you can verify the active user
+- [X] Create a private S3 bucket. The link in the email should take the user to your application, where you can verify the active user
   session or force the user to log in. After verifying the user has rights to access this file, have the application retrieve the object
   from S3 and return it in the HTTP response. Delete the file from the S3 bucket after the request is completed.
 - [ ] Create a private S3 bucket. The link in the email should take the user to your application, where you can verify the active user
@@ -505,13 +505,13 @@ aws ec2 start-instances --instance-ids i-0aa41e8086446e8f9
 #### Q59. When sending a large volume of email through SES, what is the most important set of metrics to monitor?
 
 - [ ] clicks and deliveries
-- [ ] your complaint and bounce rates
+- [X] your complaint and bounce rates
 - [ ] opens and clicks
 - [ ] sending volume over the past 15 minutes and over one day to watch for billing spikes
 
 #### Q60. You are going to host an application that uses a MySQL database. Which database should you select if you don't want to manage scaling or database administration tasks?
 
-- [ ] Aurora
+- [X] Aurora
 - [ ] Launch an AMI image from the marketplace containing a preconfigured MySQL server.
 - [ ] RDS for MySQL
 - [ ] Redshift
@@ -531,7 +531,7 @@ aws ecs create-service \
 
 - [ ] changes the security groups of the running **rest-api** task
 - [ ] creates a cluster called **production** and launches two containers into Fargate with the **rest-api** task definition
-- [ ] launches two containers onto Fargate into the existing **production** cluster using the **rest-api** task definition
+- [X] launches two containers onto Fargate into the existing **production** cluster using the **rest-api** task definition
 - [ ] creates a service definition for the **rest-api** task; put two containers on the production cluster when launched **ecs-cli** up command
 
 #### Q62. You want to make your public API quickly accessible from all regions. What is the best way to do this?
@@ -539,25 +539,25 @@ aws ecs create-service \
 - [ ] Create a single API gateway endpoint in a central region.
 - [ ] Create a private API gateway endpoint for each region.
 - [ ] Create a regional API gateway endpoint for each region.
-- [ ] Create edge-optimized API gateway endpoints and deploy them to a CloudFront network.
+- [X] Create edge-optimized API gateway endpoints and deploy them to a CloudFront network.
 
 #### Q63. You have an analytics suite that produces reports about the usage patterns of your web application. After completing your migration to AWS and using Application Load Balancer to balance the load across your web application, your marketing department noticed that location-based reports on the web traffic only show traffic originating from a single location. What is the problem?
 
 - [ ] Use a Classic Load Balancer, not Application Load Balancer.
-- [ ] Application Load Balancer does not preserve the original source IP address. The analytics software needs to be configured to look at the 'X-Forwarded-For' HTTP request header for the correct source IP address.
+- [X] Application Load Balancer does not preserve the original source IP address. The analytics software needs to be configured to look at the 'X-Forwarded-For' HTTP request header for the correct source IP address.
 - [ ] Application Load Balancer has to be configured to retain the source IP address of the traffic it is forwarding. Create a policy that enables ProxyProtocol support and attach it to the ALB using the AWS CLI.
 - [ ] Configure the web server EC2 instances to only have private IP addresses. The public IP addresses of the instances are being recorded into the web server logs, bug only ALB should have a public interface and it will route traffic to instances via the private interface.
 
 #### Q64. What is `not` a default user of a common Linux instance launched from an AMI?
 
 - [ ] ubuntu
-- [ ] system-user
+- [X] system-user
 - [ ] ec2-user
 - [ ] admin
 
 #### Q65. You have replicated the infrastructure that serves the backend API for your web application across regions to better serve your customers in the US and the EU. What is the best way to direct your web application at the nearest data center?
 
-- [ ] Use Route 53 with geolocation lookups to direct traffic between the two regions.
+- [X] Use Route 53 with geolocation lookups to direct traffic between the two regions.
 - [ ] Create a WAF redirection rule that redirects traffic at the EU data center if the source IP comes from certain countries.
 - [ ] Purchase a country domain extension and direct your users to the correct site, such as example.com and example.co
 - [ ] Have your front-end application test the latency between each data center and use the data center that is responding the fastest.
